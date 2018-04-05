@@ -3,9 +3,11 @@ from os import environ
 
 app = Flask(__name__)
 
+
 @app.route("/")
 def index():
     return 'Home Page'
+
 
 @app.route("/hello/<name>")
 def person(name):
@@ -19,6 +21,7 @@ def person(name):
         </p>
     """
     return html.format(name.title())
+
 
 @app.route("/jedi/<fname>/<lname>")
 def jedi(fname, lname):
